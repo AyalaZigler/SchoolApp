@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BLL;
+using ENTITIES;
 
 namespace SchoolApp
 {
@@ -23,10 +25,11 @@ namespace SchoolApp
         public StudentsWindow()
         {
             DataContext = this;
-            //bl = new bl;
-            //Students = bl.GetStudents();
+            Function bl = new Function();
+            Students = bl.LoadStudentsDetails();
             InitializeComponent();
         }
-        //public List<Students> Students { get; set; }
+        
+        public List<Student> Students { get; set; }
     }
 }
